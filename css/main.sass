@@ -1,0 +1,533 @@
+
+
+
+
+//colors
+$main: #000000
+$red: #ED7676
+$orange: #F8AF31
+$green: #A1C57B
+$dark-green: #8AC35C
+$blue: #345995
+$gray: #829298
+$text-gray: #898989
+$light-gray: #E0E0E0
+$lighter-gray: #F2F2F2
+$light-line: rgba(255,255,255,.3)
+
+.fl
+  float: left
+.fr
+  float: right
+.cf:after
+  content: ""
+  display: table
+  clear: both
+.space
+  margin-bottom: 1em
+.no-m
+  margin: 0 !important
+em
+  font-family: 'America Italic'
+@font-face 
+  font-family: 'America Bold'
+  src: url('../fonts/gt_america_bold-webfont.woff2') format('woff2'),url('../fonts/gt_america_bold-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+
+@font-face 
+  font-family: 'America'
+  src: url('../fonts/gt_america_regular-webfont.woff2') format('woff2'), url('../fonts/gt_america_regular-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+@font-face 
+  font-family: 'America Light'
+  src: url('../fonts/gt-america-light-webfont.woff2') format('woff2'), url('../fonts/gt-america-light-webfont.woff') format('woff')
+  font-weight: 100
+  font-style: normal
+
+
+
+
+
+
+@font-face 
+  font-family: 'America Italic'
+  src: url('../fonts/gt-america-regularitalic-webfont.woff2') format('woff2'), url('../fonts/gt-america-regularitalic-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: italic
+
+
+
+@font-face 
+  font-family: 'America Bold Italic'
+  src: url('../fonts/gt_america_bold_italic-webfont.woff2') format('woff2'), url('../fonts/gt_america_bold_italic-webfont.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+strong
+  font-family: 'America Bold'
+  em
+    font-family: 'America Bold Italic'
+*
+  box-sizing: border-box
+body
+  font-family: 'America', sans-serif
+  color: #000
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
+  box-sizing: border-box
+  // letter-spacing: .5px
+ 
+.red
+  color: $red
+   
+.orange
+  color: $orange
+h1
+  font-size: 28px
+  line-height: 34px
+.overlay--light
+  h1
+    font-size: 24px
+    line-height: 30px 
+  
+h2
+  font-size: 18px
+  line-height: 22px
+  // margin-bottom: 2em
+
+h6
+  font-size: 12px
+  line-height: 16px
+h5
+  font-family: 'America Bold'
+  font-size: 10px
+  letter-spacing: 0
+  text-transform: uppercase
+h3
+  font-size: 18px
+  letter-spacing: 0
+  line-height: 1.75em
+
+p
+  font-size: 16px
+  line-height: 26px
+  margin-bottom: 1em
+
+
+.editor-container
+  max-width: 580px
+  width: 100%
+  margin: 2em auto 0
+
+.editor-container .ql-editor
+  font-family: 'America', sans-serif
+  font-size: 18px
+  line-height: 31px
+
+  p
+    font-size: 18px
+    line-height: 31px
+    margin-bottom: 1em
+    -webkit-font-smoothing: antialiased
+    font-smoothing: antialiased
+    span > p:first-of-type
+      margin-top: 1em
+      // margin-bottom: 0
+#researchEditor 
+  &.ql-container
+    max-height: 120px
+  .ql-editor
+    font-family: 'America', sans-serif
+    font-size: 16px
+    line-height: 26px
+    padding: 0
+
+  p
+    font-size: 16px
+    line-height: 26px
+    margin-bottom: 1em
+    -webkit-font-smoothing: antialiased
+    font-smoothing: antialiased
+    
+
+.modal
+  background-image: linear-gradient(133deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,.9) 100%)
+  box-shadow: 0 3px 27px 2px rgba(0,0,0,0.10)
+  -webkit-backdrop-filter: blur(5px)
+  backdrop-filter: blur(5px)
+  border-radius: 20px
+  padding: 2em
+
+  position: fixed
+  z-index: 1
+  left: -10000px
+  transition: .2s opacity
+  &.modal--small
+    width: 320px
+  p
+    letter-spacing: 0
+    color: $text-gray
+    text-shadow: 0 1px 0 white
+    line-height: 20px
+
+.callout
+  background: $light-gray
+  border-radius: 5px
+  padding: .5em 1em
+  &.callout--red
+    color: $red
+    p
+      color: $red
+      margin-bottom: 0
+      // line-height: 24px
+.tag
+  background: $light-gray
+  display: inline-block
+  padding: 1px 6px
+  border-radius: 5px
+  text-align: center
+  color: black
+  text-shadow: none
+  &.tag--medium
+    border-radius: 10px
+    padding: 3px 7px 4px
+    font-size: 11px
+  &.tag--orange
+    background: $orange
+    color: white
+  &.tag--red
+    background: $red
+    color: white
+
+.overlay
+  background-color: $main
+  box-shadow: 0 3px 27px 2px rgba(0,0,0,0.10)
+  border-radius: 20px
+  position: fixed
+  top: 3em
+  bottom: 3em
+  // left: 3em
+  padding: 1.5em
+  color: white
+  width: 285px
+  z-index: 2
+  transition:  transform .3s
+  article
+    border-top: 1px solid $light-gray
+  &.overlay--light
+    background-color: unset
+    color: black
+    background-image: linear-gradient(133deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,.9) 100%)
+    box-shadow: 0 3px 27px 2px rgba(0,0,0,0.10)
+    -webkit-backdrop-filter: blur(5px)
+    backdrop-filter: blur(5px)
+    left: calc(285px + 5em)
+  &.overlay--green
+    background-color: $green
+    color: black
+    
+    box-shadow: 0 3px 27px 2px rgba(0,0,0,0.10)
+    -webkit-backdrop-filter: blur(5px)
+    backdrop-filter: blur(5px)
+    // left: calc(285px + 5em)
+  &.overlay--medium
+    width: 315px
+  h6
+    opacity: .4
+  header
+    height: 95px
+    width: 100%
+  .doubler
+    display: flex
+    height: 100%
+    justify-content: space-between
+  .first
+    width: 291px
+    // transition: border .2s
+    
+  &.open .first
+    border-right: 1px solid $light-gray
+    padding-right: 24px
+  &.open .second
+    display: block
+  .second
+    width: 450px
+    display: none
+    // background-color: yellow
+  // transition: width .2s
+.overlay.overlay--toggle
+  left: -1000px
+  // transition: .3s all
+  z-index: 1
+  &.active
+    left: calc(285px + 5em)
+.active-rect
+  opacity: 0
+  transition: .3s
+  background-color: $orange
+  width: 10px
+  height: 50px
+  position: absolute
+  right: -29px
+  top: 0
+  border-radius: 3px
+.active
+  .active-rect
+    opacity: 1
+
+input[type=search]
+  border-radius: 15px
+  height: 30px
+  line-height: 30px
+  font-size: 12px
+  width: 100%
+  border: none
+  margin-bottom: 2em
+  padding: 0 1em
+  background: white
+  border: 1px solid $gray
+
+
+.overlay.overlay--light
+  .lined-list
+    li
+      border-color: $light-gray 
+      &:hover
+        cursor: pointer
+        background: rgba(0,0,0,.05)
+
+.lined-list
+  margin-bottom: 2em
+  &.lined-list--detailed
+    li
+      min-height: 80px
+      border-color: $light-gray
+      h2
+        font-size: 14px
+        line-height: 14px
+        margin-bottom: 3px
+  li
+    list-style: none
+    padding: .5em
+    border-top: 1px $light-line solid
+    position: relative
+    // background: black
+    // transition: .3s padding
+    .fl
+      width: 70%
+    // &:first-of-type
+    //   border: none
+    &:hover
+      cursor: pointer
+      background: rgba(255, 255,255,.2)
+      padding-left: .6em
+      padding-right: .6em
+      .caret
+        right: 10px
+    .caret
+      position: absolute
+      right: 0px
+      top: 50%
+      transform: translateY(-50%)
+      transition: .3s all
+#researchOverlay.open, #characterOverlay.open
+  width: 817px
+
+
+.modal input
+    position: absolute
+    left: 0
+    top: -33px
+    width: 100%
+    border: 0
+    background: #f2f2f2
+    font-size: 18px
+    padding: .25em .5em
+    border-radius: 14px
+    color: $red
+    &:focus
+      outline: none
+
+
+.ql-editor::-webkit-scrollbar-track 
+  border: none
+  // padding: 2px 0
+  background-color: none
+
+
+.ql-editor::-webkit-scrollbar 
+  width: 10px
+
+
+.ql-editor::-webkit-scrollbar-thumb 
+  // height: 30px
+  width: 5px
+  padding: 0
+  border-radius: 3px
+  background-color: #f2f2f2
+
+#library, #critic
+  transform: translate3d(-45em,0,0)
+.menu-container, .menu
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  width: 200px
+  z-index: 0
+  // background-color: yellow
+  &.active
+    z-index: 9
+    .menu
+      transform: translate3d(0,0,0)
+    .handle
+      transform: translate3d(-30px,0,0)
+.handle
+    position: absolute
+    // top: 50%
+    height: 100%
+    width: 40px
+    border-radius: 9px
+    // background: blue
+    // border: 1px solid $light-gray
+    left: -14px
+    // transform: translateY(-50%)
+    padding: 14px 15px 15px 22px
+    transform: translate3d(-200px,0,0)
+    margin-left: 200px
+    transition: .2s transform
+    svg
+      display: block
+      position: relative
+      top: 50%
+      transform: translateY(-50%)
+.menu
+  width: 200px
+  padding: 1em
+  // background-color: purple
+  // position: relative
+  transform: translate3d(-200px,0,0)
+  transition: .2s transform
+  // top: 2em
+  background-color: $blue
+
+.button
+  background-color: black
+  color: white
+  padding: .5em .75em
+  border-radius: 10px
+  font-size: 16px
+  width: 100%
+  margin-bottom: 1em
+  text-align: center
+  display: inline-block
+  transition: background .2s
+  &.light
+    background-color: white
+    color: $blue
+    &:hover
+      background-color: rgba(255,255,255,.8)
+  &.orange
+    background-color: $orange
+  &.small
+    font-size: 12px
+  &.limited
+    width: unset
+    min-width: 90px
+    padding: .5em 1em
+  &:hover
+    cursor: pointer
+    background-color: rgba(0,0,0,.75)
+.web-clipping
+  background-color: $lighter-gray
+  border-radius: 15px
+  padding: 1.5em
+  p
+    font-size: 12px
+    line-height: 16px
+div:focus
+    outline: none
+.interview
+  position: absolute
+  top: 0em
+  background-color: white
+  opacity: 0
+  display: none
+  &.open
+    opacity: 1
+    display: block
+.chat-window
+  padding: 1em
+  border-radius: 1em
+  box-shadow: 0 3px 27px 2px rgba(0,0,0,0.10)
+  font-size: 14px
+  line-height: 18px
+  max-width: 260px
+  margin-bottom: 1em
+.chat-container
+  &.orange
+    .chat-window
+      background-color: $orange
+      color: white
+  margin-bottom: 1em
+  
+  img
+    width: 40px
+    border-radius: 50%
+    position: absolute
+    margin-top: -30px
+  &:nth-of-type(even)
+    img 
+      left: -20px
+  &:nth-of-type(odd)
+    img 
+      right: -20px
+.chat
+  max-height: calc(100% - 200px)
+.chat-response
+  border-top: 1px $light-line solid
+  padding-top: 1em 
+  // position: absolute
+  // bottom: 0
+  // width: 100%
+  .button
+    position: absolute
+    right: 11px
+    bottom: 0
+  textarea
+    background-color: #f2f2f2
+    padding: 1em
+    border-radius: 20px
+    color: black
+    font-size: 14px
+    line-height: 18px
+    width: 100%
+    height: 100px
+    border: none
+    resize: none
+    font-family: 'America'
+    &:focus
+      outline: none
+    
+.fading
+  -webkit-animation-duration: 5s
+  -webkit-animation-name: fading
+  animation-duration: 5s
+  animation-name: fading
+
+@-webkit-keyframes fading
+  0%
+    color: white
+  20%
+    color: $red
+  100%
+    color: black
+
+@keyframes fading
+  0%
+    color: white
+  20%
+    color: $red
+  100%
+    color: black

@@ -1,0 +1,359 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Poetics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xqd0ati.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  </head>
+  <body>
+    <div class="menu-container">
+      <div class="handle">
+        <svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="1">
+                <g id="Accordion-with-subhead" transform="translate(-212.000000, -14.000000)" stroke="#000000">
+                    <polyline id="Path-6" transform="translate(215.084079, 19.370930) rotate(-90.000000) translate(-215.084079, -19.370930) " points="210.084079 17 215.084079 21.7418604 220.084079 17"></polyline>
+                </g>
+            </g>
+        </svg>
+      </div>
+      <div class="menu">
+        <div class="button light" id="libraryMenu">Library</div>
+        <div class="button light" id="criticMenu">Critic</div>
+      </div>
+    </div>
+    <div class="overlay" id="library">
+      <header>
+        <h6>10gb storage</h6>
+        <h1>The Library</h1>
+      </header>
+      <article style="border: none;">
+        <input type="search" placeholder="Search">
+        <div class="lined-list">
+          <li id="research">
+            <h2>Research</h2>
+            <h6>4 items</h6>
+            <div class="caret">
+              <svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.498244066">
+                      <g id="Accordion-with-subhead" transform="translate(-212.000000, -14.000000)" stroke="#FFFFFF">
+                          <polyline id="Path-6" transform="translate(215.084079, 19.370930) rotate(-90.000000) translate(-215.084079, -19.370930) " points="210.084079 17 215.084079 21.7418604 220.084079 17"></polyline>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <div class="active-rect"></div>
+          </li>
+          <li id="characters">
+            <h2>Characters</h2>
+            <h6>2 items</h6>
+            <div class="caret">
+              <svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.498244066">
+                      <g id="Accordion-with-subhead" transform="translate(-212.000000, -14.000000)" stroke="#FFFFFF">
+                          <polyline id="Path-6" transform="translate(215.084079, 19.370930) rotate(-90.000000) translate(-215.084079, -19.370930) " points="210.084079 17 215.084079 21.7418604 220.084079 17"></polyline>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <div class="active-rect"></div>
+          </li>
+          <li id="locations">
+            <h2>Locations</h2>
+            <h6>2 items</h6>
+            <div class="caret">
+              <svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.498244066">
+                      <g id="Accordion-with-subhead" transform="translate(-212.000000, -14.000000)" stroke="#FFFFFF">
+                          <polyline id="Path-6" transform="translate(215.084079, 19.370930) rotate(-90.000000) translate(-215.084079, -19.370930) " points="210.084079 17 215.084079 21.7418604 220.084079 17"></polyline>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <div class="active-rect"></div>
+          </li>
+        </div>
+        <h2 style="margin-bottom: 10px">Tags</h2>
+        <div class="tag tag--red tag--medium">guns</div> <div class="tag tag--red tag--medium">police weapons</div>
+      </article>
+    </div>
+
+    <div class="overlay overlay--green" id="critic">
+      <header>
+        <h6>Nice and helpful</h6>
+        <h1>The Critic</h1>
+      </header>
+      <article style="border: none;">
+        <input type="search" placeholder="Search">
+        <div class="lined-list">
+          <li id="research">
+            <h2>Research</h2>
+            <h6>4 items</h6>
+            <div class="caret">
+              <svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.498244066">
+                      <g id="Accordion-with-subhead" transform="translate(-212.000000, -14.000000)" stroke="#FFFFFF">
+                          <polyline id="Path-6" transform="translate(215.084079, 19.370930) rotate(-90.000000) translate(-215.084079, -19.370930) " points="210.084079 17 215.084079 21.7418604 220.084079 17"></polyline>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <div class="active-rect"></div>
+          </li>
+          <li id="characters">
+            <h2>Characters</h2>
+            <h6>2 items</h6>
+            <div class="caret">
+              <svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.498244066">
+                      <g id="Accordion-with-subhead" transform="translate(-212.000000, -14.000000)" stroke="#FFFFFF">
+                          <polyline id="Path-6" transform="translate(215.084079, 19.370930) rotate(-90.000000) translate(-215.084079, -19.370930) " points="210.084079 17 215.084079 21.7418604 220.084079 17"></polyline>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <div class="active-rect"></div>
+          </li>
+          <li id="locations">
+            <h2>Locations</h2>
+            <h6>2 items</h6>
+            <div class="caret">
+              <svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.498244066">
+                      <g id="Accordion-with-subhead" transform="translate(-212.000000, -14.000000)" stroke="#FFFFFF">
+                          <polyline id="Path-6" transform="translate(215.084079, 19.370930) rotate(-90.000000) translate(-215.084079, -19.370930) " points="210.084079 17 215.084079 21.7418604 220.084079 17"></polyline>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <div class="active-rect"></div>
+          </li>
+        </div>
+        <h2 style="margin-bottom: 10px">Tags</h2>
+        <div class="tag tag--red tag--medium">guns</div> <div class="tag tag--red tag--medium">police weapons</div>
+      </article>
+    </div>
+    
+    <div class="overlay overlay--light overlay--medium overlay--toggle" id="characterOverlay">
+      <div class="doubler">
+        <section class="first">
+          <header>
+            <h6>4 items</h6>
+            <h1>Characters</h1>
+          </header>
+          <article>
+        
+            <div class="lined-list lined-list--detailed">
+              <li id="characterOpen">
+                <div class="fl">
+                  <h2>Hierynomous Bosch</h2>
+                  <h6>Main character</h6>
+                </div>
+                <div class="fr"><img src="images/bosch.png" width="60px" alt=""></div>
+                <div class="active-rect" style="top: 14px"></div>
+              </li>
+              <li>
+                <h2>Jenny Ballard</h2>
+                <h6>Main character</h6>
+              </li>
+        
+            </div>
+        
+          </article>
+        </section>
+        <section class="second" style="position: relative;">
+          <header>
+            <h6 class="orange" style="opacity: 1;"><strong>CHARACTER</strong></h6>
+            <h1>Hierynomous Bosch</h1>
+          </header>
+          <article style="padding-top: 1em">
+            <div class="button orange limited" id="interviewActivate">Interview</div>
+
+            <div contenteditable="true">
+              <p>Bosch's mother was a prostitute in Hollywood who was murdered on October 28, 1961, when Bosch was 11 years old. His father, whom he met later in life, was Mickey Haller Sr., a prominent defense attorney known for representing mobster Mickey Cohen, among other clients.</p>
+                
+              <p>Bosch spent his youth in various orphanages and youth halls, and with the occasional foster family. When he learned of his mother's murder, Bosch, then living at a youth hall, dived to the bottom of the pool, screamed until he ran out of air, and then swam back to the surface. This event is referenced in several Bosch novels.</p>
+              
+            </div>
+            
+          </article>
+          <div class="interview" id="interview">
+            <header>
+              <h6 class="orange" style="opacity: 1;"><strong>INTERVIEWING</strong></h6>
+              <h1>Hierynomous Bosch</h1>
+            </header>
+            <article style="padding-top: 1em">
+              <div class="chat cf">
+                <div class="chat-container orange fr">
+                  <div class="chat-window">Can you describe a defining moment in your life?</div>
+                  <img src="images/oprah.png" alt="">
+                </div>
+                <div class="chat-container fl">
+                  <div class="chat-window">I was a tunnel rat in Vietnam. I still remember the smell. Fear, rot, the acid of death all in the air all the time. It made me who I am today.</div>
+                  <!-- <div class="chat-window">As a cop I think all the time about the difference between us in the tunnel and those above. What made us different? Nothing. We all matter.</div> -->
+                  <img src="images/bosch.png" alt="">
+                </div>
+              </div>
+              <div class="chat-response">
+                <div style="color: #999; font-size: 14px;" class="space">You respond as Hieroynmous Bosch</div>
+                <textarea name="" id="" cols="30" rows="10" noresize></textarea>
+                <div class="button small limited">Send</div>
+              </div>
+            
+            </article>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+    <div class="overlay overlay--light overlay--medium overlay--toggle" id="researchOverlay">
+      <div class="doubler">
+        <section class="first">
+          <header>
+            <h6>4 items</h6>
+            <h1>Research</h1>
+          </header>
+          <article>
+        
+            <div class="lined-list lined-list--detailed">
+              <li id="researchOpen">
+                <div class="fl">
+                  <h2>Weapons used by police and military</h2>
+                  <div class="tag tag--orange tag--medium">guns</div>
+                </div>
+                <div class="fr"><img src="images/badge.png" width="60px" alt=""></div>
+                <div class="active-rect" style="top: 14px"></div>
+              </li>
+              <li>
+                <h2>Jenny Ballard</h2>
+                <h6>Main character</h6>
+              </li>
+        
+            </div>
+        
+          </article>
+        </section>
+        <section class="second">
+          <header>
+            <h6>edited 3rd Oct 2021 14:54</h6>
+            <h1>Weaponry used by police and military</h1>
+          </header>
+          <article style="padding-top: 1em">
+
+            <div id="researchEditor">
+              
+              <p>Glock-17 is the original model – seems to be what all the cops use. When it first came out it was deemed bizarre and ugly. But it never fails and that’s why law enforcement bought in.</p>
+              
+            </div>
+            <div class="web-clipping ">
+              <h6 class="orange space" style="opacity: 1;"><strong>WEB CLIPPING SUMMARY</strong></h6>
+              <div class="cf">
+                <div class="fl" style="width: 66%;">
+                  <p>The Glock is a semi-automatic, short recoil-operated, locked breech pistol. It is chambered for the 9×19mm Parabellum cartridge. It holds 17 cartridges in its magazine. It is the most widely used law enforcement pistol in the world, having been adopted by numerous military and law enforcement organizations, including the U.S. Customs Service, the Secret Service, the FBI.</p>
+                </div>
+                <div class="fr" style="width: 28%;margin-top: 35px;"><img src="images/glock.png" width="105px" alt=""></div>
+              </div>
+              <div class="button orange small limited no-m">Read in full</div>
+            </div>
+
+          </article>
+        </section>
+      </div>
+    </div>
+    <div class="overlay overlay--light overlay--medium overlay--toggle" id="locationsOverlay">
+      <header>
+        <h6>4 items</h6>
+        <h1>Locations</h1>
+      </header>
+      <article>
+        
+        <div class="lined-list lined-list--detailed">
+          <li>
+            <div class="fl">
+              <h2>Hieroynmous Bosch</h2>
+              <h6>Main character</h6>
+            </div>
+            <div class="fr"><img src="images/bosch.png" width="60px" alt=""></div>
+          </li>
+          <li>
+            <h2>Jenny Ballard</h2>
+            <h6>Main character</h6>
+          </li>
+          
+        </div>
+       
+      </article>
+    </div>
+
+
+
+
+    <div id="describeLoader" style="display: none;position: absolute;"><img src="images/loader.gif" alt="" width="32px"></div>
+    <div class="modal modal--small" id="describeModal" style="opacity: 0;">
+      <input type="text" id="describeInput">
+     
+      <header>
+        <h5>Command</h5>
+        <h3>Describe</h3>
+      </header>
+      <p>
+        Writes sentences with understanding of local and macro context<br/>
+        — what to describe?<br/>
+        — how many sentences?<br/>
+        — add reference item?
+      </p>
+      <div class="callout callout--red">
+        <p>/describe Glock-17 gun in technical terms, 5, <span class="tag tag--red">guns</span></p>
+      </div>
+    </div>
+    <div class="modal modal--small" id="dialogueModal" style="opacity: 0;">
+      <input type="text" id="dialogueInput">
+      <header>
+        <h5>Command</h5>
+        <h3>Dialogue</h3>
+      </header>
+      <p>
+        Writes sentences with understanding of local and macro context<br/>
+        — what to describe?<br/>
+        — how many sentences?<br/>
+        — add reference item?
+      </p>
+      <div class="callout callout--red">
+        <p>/dialogue Glock-17 gun in technical terms, 5, <span class="tag tag--red">guns</span></p>
+      </div>
+    </div>
+    
+    <!-- <div id="testText">
+      Hello /desasdfasdf /di
+    </div> -->
+    <!-- Create the editor container -->
+    <div class="editor-container close-it">
+      <div id="editor">
+        <p>Bosch arrived late and had to park on a cemetery lane far from the grave site. Careful not to step on anybody’s grave, he limped through two memorial sections, his cane sinking into the soft ground, until he saw the gathering for John Jack Thompson. It was standing room only around the old detective’s grave site and Bosch knew that wouldn’t work with his knee six weeks post-op. He retreated to the nearby Garden of Legends section and sat on a concrete bench that was part of Tyrone Power’s tomb. He assumed it was okay since it was clearly a bench. He remembered his mother taking him to see Power in the movies when he was a kid. Old stuff they would run in the revival theaters on Beverly. He remembered the handsome actor as Zorro and as the accused American in Witness for the Prosecution.</p>
+
+
+      </div>
+    </div>
+    
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+     
+
+
+    </script>
+  </body>
+</html>
+<!-- <img src="https://upload.wikimedia.org/wikipedia/en/1/13/Titus_Welliver_as_Harry_Bosch.jpg" alt=""> -->
