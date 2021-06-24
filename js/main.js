@@ -22,13 +22,34 @@ function closeAll() {
   })
 }
 
+function closeMenuAll() {
+  $('#characterOverlay').removeClass('active');
+  $('#characterOverlay').siblings().each(function(){
+    $(this).removeClass('active');
+  })
+  $('#researchOverlay').removeClass('active');
+  $('#researchOverlay').siblings().each(function(){
+    $(this).removeClass('active');
+  })
+  $('#locationOverlay').removeClass('active');
+  $('#locationOverlay').siblings().each(function(){
+    $(this).removeClass('active');
+  })
+  $('#critic').css('transform', 'translate3d(-45em,0,0)');
+  $('#library').css('transform', 'translate3d(-45em,0,0)');
+}
+
+$('.main').click(function(){
+  console.log(this);
+  closeMenuAll();
+});
 
 //menu
   $('.handle').mouseenter(function(){
     $('.menu-container').addClass('active');
   })
-  $('.menu-container').mouseleave(function(){
-    $(this).removeClass('active');
+  $('.menu').mouseleave(function(){
+    $('.menu-container').removeClass('active');
   })
 
 $('#libraryMenu').click(function(){
