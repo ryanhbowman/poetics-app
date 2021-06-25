@@ -113,7 +113,13 @@ p
   font-size: 16px
   line-height: 26px
   margin-bottom: 1em
-
+.ql-editor
+  h1
+    margin-bottom: 1em
+  h2
+    // text-decoration: underline
+    margin-bottom: .5em
+    margin-top: 1em
 
 .editor-container
   max-width: 580px
@@ -165,11 +171,30 @@ p
   transition: .2s opacity
   &.modal--small
     width: 320px
+  &.modal--xsmall
+    width: 240px
   p
     letter-spacing: 0
     color: $text-gray
     text-shadow: 0 1px 0 white
     line-height: 20px
+  h3
+    line-height: 24px
+  textarea
+    background-color: #f2f2f2
+    margin-top: 1em
+    padding: 1em
+    border-radius: 10px
+    color: black
+    font-size: 14px
+    line-height: 18px
+    width: 100%
+    height: 140px
+    border: none
+    resize: none
+    font-family: 'America'
+    &:focus
+      outline: none
 
 .callout
   background: $light-gray
@@ -313,7 +338,7 @@ input[type=search]
     border-top: 1px $light-line solid
     position: relative
     // background: black
-    // transition: .3s padding
+    transition: .3s padding
     .fl
       width: 70%
     // &:first-of-type
@@ -552,3 +577,70 @@ div:focus
     color: $red
   100%
     color: black
+
+$startL: 300px + 5
+$startT: 200px + 3
+.blueDotContainer
+  padding: 2em 
+  // background-color: $green
+  position: absolute
+  left: $startL
+  top: $startT
+  -webkit-animation-duration: 10s
+  -webkit-animation-name: moveAround
+  animation-duration: 10s
+  animation-name: moveAround
+  animation-iteration-count: infinite
+  animation-timing-function: ease-in
+  transition: .7s opacity
+  &:hover, &.actived
+    animation-play-state: paused  
+    cursor: pointer
+    .blueDot
+  
+      box-shadow: 0 3px 27px 2px rgba(0,0,0,0.30)
+  
+.blueDot
+  background-color: $blue
+  box-shadow: 0 3px 27px 2px rgba(0,0,0,0.10)
+  width: 20px
+  height: 20px
+  border-radius: 50%
+#blueDotQuestion
+  .button
+    position: absolute
+    right: 41px
+    bottom: 54px
+@-webkit-keyframes moveAround
+  0%
+    color: white
+  20%
+    color: $red
+  100%
+    color: black
+
+@keyframes moveAround
+  0%
+    left: $startL
+    top: $startL
+  20%
+    left: $startL + 20
+    top: $startT + 10
+  30%
+    left: $startL + 15
+    top: $startT + 14
+  30%
+    left: $startL + 12
+    top: $startT - 2
+  50%
+    left: $startL +16
+    top: $startT - 5
+  70%
+    left: $startL + 5
+    top: $startT - 25
+  85%
+    left: $startL + 2
+    top: $startT - -7
+  100%
+    left: $startL
+    top: $startT

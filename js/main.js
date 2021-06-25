@@ -29,6 +29,7 @@ function closeMenuAll() {
   })
   $('#researchOverlay').removeClass('active');
   $('#researchOverlay').siblings().each(function(){
+    
     $(this).removeClass('active');
   })
   $('#locationOverlay').removeClass('active');
@@ -37,11 +38,31 @@ function closeMenuAll() {
   })
   $('#critic').css('transform', 'translate3d(-45em,0,0)');
   $('#library').css('transform', 'translate3d(-45em,0,0)');
+  $('#blueDotQuestion').css('opacity', 10).css('left', -2000).css('top', -2000);
+  $('#blueDotContainer').removeClass('actived');
 }
 
+$('#sendInterview').click(function(){
+  var theText = $('#textInterview').val();
+  $('#toReplace').text(theText);
+  $('#toReplace').slideDown();
+});
+
 $('.main').click(function(){
-  console.log(this);
   closeMenuAll();
+  console.log('reset');
+});
+
+$('#sendQuestion').click(function(){
+  $('#blueDotQuestion').css('opacity', 10).css('left', -2000).css('top', -2000);
+  $('#blueDotContainer').removeClass('actived');
+  $('#blueDotContainer').css('opacity',0);
+});
+$('#blueDotContainer').click(function(){
+  var position = $('#blueDotContainer').position();
+  $('#blueDotQuestion').css('opacity', 1).css('left', position.left - 170).css('top', position.top - 20);
+  $(this).addClass('actived');
+  $('#dotEditor').focus();
 });
 
 //menu
