@@ -374,17 +374,18 @@ input[type=search]
   top: 0
   left: 0
   bottom: 0
-  right: 0 
-  width: 100%
   z-index: 0
   // background-color: yellow
   &.active
     z-index: 9
     .menu
-      transform: translate3d(1em,-50%,0)
+      transform: translate3d(0em,-50%,0)
+    .modal
+      transform: translate3d(20px, -50%, 0)
       
     .handle
       transform: translate3d(-30px,0,0)
+
 .handle
     position: absolute
     // top: 50%
@@ -406,13 +407,19 @@ input[type=search]
       transform: translateY(-50%)
 .menu
   width: 200px
-  height: 146px
-  padding: 2em
+  // height: 146px
+  // padding: 2em
   // background-color: purple
+  height: 100%
   // position: relative
   transform: translate3d(-100%,-50%,0)
   top: 50%
   transition: .2s transform
+  .modal
+    position: relative
+    left: unset
+    top: 50%
+    transform: translateY(-50%) 
   
   // top: 2em
   // background-color: $blue
