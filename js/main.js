@@ -7,6 +7,8 @@ var quill = new Quill('#researchEditor', {
 });
 // var testText = document.getElementById('testText');
 
+
+
 function closeAll() {
   $('#characterOverlay').removeClass('active');
   $('#characterOverlay').siblings().each(function(){
@@ -38,8 +40,8 @@ function closeMenuAll() {
   })
   $('#critic').css('transform', 'translate3d(-45em,0,0)');
   $('#library').css('transform', 'translate3d(-45em,0,0)');
-  $('#blueDotQuestion').css('opacity', 10).css('left', -2000).css('top', -2000);
-  $('#blueDotContainer').removeClass('actived');
+  // $('#blueDotQuestion').css('opacity', 0).css('left', -2000).css('top', -2000);
+  // $('#blueDotContainer').removeClass('actived');
 }
 
 $('#sendInterview').click(function(){
@@ -54,13 +56,14 @@ $('.main').click(function(){
 });
 
 $('#sendQuestion').click(function(){
-  $('#blueDotQuestion').css('opacity', 10).css('left', -2000).css('top', -2000);
+  $('#blueDotQuestion').css('opacity', 1).css('left', -2000).css('top', -2000);
   $('#blueDotContainer').removeClass('actived');
-  $('#blueDotContainer').css('opacity',0);
+  $('#blueDotContainer').css('opacity', 0);
 });
 $('#blueDotContainer').click(function(){
   var position = $('#blueDotContainer').position();
-  $('#blueDotQuestion').css('opacity', 1).css('left', position.left - 170).css('top', position.top - 20);
+  console.log(position.left, position.top);
+  $('#blueDotQuestion').css('opacity', 1).css('left', position.left + 260).css('top', position.top + 20);
   $(this).addClass('actived');
   $('#dotEditor').focus();
 });
@@ -171,7 +174,16 @@ function modalActivate(includeText) {
   return modalTime;
 }
 
+function tagActivate(element, includeText) {
+  // checks if editor includes the special activation text
+  const editor = document.getElementById(element);
+  const editorText = editor.textContent;
+  const modalTime = editorText.includes(includeText);
+  return modalTime;
+}
+
 const editor = document.getElementById('editor');
+
 const editorQuill = document.getElementsByClassName('ql-editor');
 var editorText = editor.textContent;
 
@@ -192,28 +204,28 @@ editor.addEventListener('keyup', function(){
       rect = range.getClientRects()[0];
   // var editorQuillText = editorQuill[0].textContent;
   
+ 
 
   if (describeActivate) {
-    describeInput.value = "/de";
-    describeInput.focus();
-    describeModal.style.top = rect.y + 30;
-    describeModal.style.left = rect.x - 34;
-    describeLoader.style.top = rect.y + 27;
-    describeLoader.style.left = rect.x - 26;
+    describeInput.innerHTML = "/describe ";
+    showSelectionPosition();
+    describeModal.style.top = rect.y + 64;
+    describeModal.style.left = rect.x - 22;
+    describeLoader.style.top = rect.y - 4;
+    describeLoader.style.left = rect.x - 22;
     describeModal.style.opacity = 1;
-    editor.innerHTML = editor.innerHTML.replace(/ \B\/\w+/gm, " ");
-    
-    
+    editor.innerHTML = editor.innerHTML.replace(/ \B\/\w+/gm, "");
   }
   if (dialogueActivate) {
-    dialogueInput.value = "/di";
-    dialogueInput.focus();
-    dialogueModal.style.top = rect.y + 30;
-    dialogueModal.style.left = rect.x - 34;
-    dialogueLoader.style.top = rect.y + 27;
-    dialogueLoader.style.left = rect.x - 26;
+    dialogueInput.innerHTML = "/dialogue ";
+    
+    showSelectionPositionDis();
+    dialogueModal.style.top = rect.y + 64;
+    dialogueModal.style.left = rect.x - 22;
+    dialogueLoader.style.top = rect.y -4;
+    dialogueLoader.style.left = rect.x - 22;
     dialogueModal.style.opacity = 1;
-    editor.innerHTML = editor.innerHTML.replace(/ \B\/\w+/gm, " ");
+    editor.innerHTML = editor.innerHTML.replace(/ \B\/\w+/gm, "");
    
     // editor.textContent = editorQuillText.replace(/\B\/\w+/gm, "<span class='red'>$1</span>");
   }
@@ -225,20 +237,55 @@ editor.addEventListener('keyup', function(){
   }
 });
 
-var fakeGeneration = "<span class='fading' id='fading'>This is some AI shit that the AI writes in an AI way. It is very AI.</span>";
+var fakeGeneration = " <span class='fading' id='fading'>This is some AI shit that the AI writes in an AI way. It is very AI.</span>";
 var fakeGenerationChrist = "This is some AI shit that the AI writes in an AI way. It is very AI.";
-var fakeGenerationDia = "<span  class='fading' id='fading2'><p>&ldquo;This is the best thing that I have ever heard.&rdquo; he said.</p><p>&ldquo;I agree.&rdquo; Bosch replied.</p></span>";
+var fakeGenerationDia = "<span  class='fading' id='fading2'></span>";
 var fakeGenerationDiaChrist = "&ldquo;This is the best thing that I have ever heard.&rdquo;";
+var noMore = false;
+var noMore2 = false;
+var noMore3 = false;
+var noMore4 = false;
+var noMore5 = false;
 
 $('#describeInput').on('keypress', function(e) {
+  tagActive = tagActivate('describeInput', 'Bosch');
+  if (tagActive && !noMore){
+    describeInput.innerHTML = describeInput.innerHTML.replace("Bosch", "<span class='tag'>Bosch</span>&nbsp;");
+    showSelectionPosition();
+    noMore = true;
+  }
+  tagActive2 = tagActivate('describeInput', 'guns');
+  if (tagActive2 && !noMore2){
+    describeInput.innerHTML = describeInput.innerHTML.replace("guns", "<span class='tag'>guns</span>&nbsp;");
+    showSelectionPosition();
+    noMore2 = true;
+  }
+  tagActive3 = tagActivate('describeInput', 'Vietnam');
+  if (tagActive3 && !noMore3){
+    describeInput.innerHTML = describeInput.innerHTML.replace("Vietnam", "<span class='tag'>Vietnam tunnels</span>&nbsp;");
+    showSelectionPosition();
+    noMore3 = true;
+  }
+  tagActive4 = tagActivate('describeInput', '2');
+  if (tagActive4 && !noMore4){
+    describeInput.innerHTML = describeInput.innerHTML.replace("2", "<span class='tag'>2</span>&nbsp;");
+    showSelectionPosition();
+    noMore4 = true;
+  }
+  
   if(e.which == 13) { 
     describeModal.style.opacity = 0;
     describeModal.style.left= -2000;
     $('#describeLoader').fadeIn(200).delay(1800).fadeOut(200);
     setTimeout(
       function() 
-      {         
-          $('.ql-editor p:last').append(fakeGeneration).delay(5000);
+      {     
+        $('.ql-editor p:last').append(fakeGeneration).delay(5000);      
+        new TypeIt("#fading", {
+          speed: 40
+        }).go();  
+        
+          
           setTimeout(
             function() 
             {   
@@ -251,6 +298,37 @@ $('#describeInput').on('keypress', function(e) {
 });
 
 $('#dialogueInput').on('keypress', function(e) {
+  tagActive = tagActivate('dialogueInput', 'Bosch');
+  if (tagActive && !noMore){
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Bosch", "<span class='tag'>Bosch</span>&nbsp;");
+    showSelectionPositionDis();
+    noMore = true;
+  }
+  tagActive2 = tagActivate('dialogueInput', 'guns');
+  if (tagActive2 && !noMore2){
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("guns", "<span class='tag'>guns</span>&nbsp;");
+    showSelectionPositionDis();
+    noMore2 = true;
+  }
+  tagActive3 = tagActivate('dialogueInput', 'Vietnam');
+  if (tagActive3 && !noMore3){
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Vietnam", "<span class='tag'>Vietnam tunnels</span>&nbsp;");
+    showSelectionPositionDis();
+    noMore3 = true;
+  }
+  tagActive4 = tagActivate('dialogueInput', '2');
+  if (tagActive4 && !noMore4){
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("2", "<span class='tag'>2</span>&nbsp;");
+    showSelectionPositionDis();
+    noMore4 = true;
+  }
+  tagActive5 = tagActivate('dialogueInput', 'Jenny');
+  if (tagActive5 && !noMore5){
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Jenny", "<span class='tag'>Jenny</span>&nbsp;");
+    showSelectionPositionDis();
+    noMore5 = true;
+  }
+
   if(e.which == 13) { 
     dialogueModal.style.opacity = 0;
     dialogueModal.style.left= -2000;
@@ -259,6 +337,13 @@ $('#dialogueInput').on('keypress', function(e) {
       function() 
       {         
           $('.ql-editor p:last').append(fakeGenerationDia).delay(5000);
+             
+          new TypeIt("#fading2", {
+           speed: 40,
+           html: true,
+           strings: ["<p>&ldquo;I was on the tunnel squad in the war. We used special weapons just like this down there. The moisture was the big problem, it would rust a gun in a single outing.&rdquo;</p>", "<p>&ldquo;Makes sense.&rdquo; Julie replied.</p>"]
+          }).go();  
+
           setTimeout(
             function() 
             {   
@@ -323,3 +408,33 @@ return cum_length;
 return [cum_length[1], cum_length[0]];
 }
 
+function setEndOfContenteditable(contentEditableElement)
+{
+    var range,selection;
+    if(document.createRange)//Firefox, Chrome, Opera, Safari, IE 9+
+    {
+        range = document.createRange();//Create a range (a range is a like the selection but invisible)
+        range.selectNodeContents(contentEditableElement);//Select the entire contents of the element with the range
+        range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+        selection = window.getSelection();//get the selection object (allows you to change selection)
+        selection.removeAllRanges();//remove any selections already made
+        selection.addRange(range);//make the range you have just created the visible selection
+    }
+    else if(document.selection)//IE 8 and lower
+    { 
+        range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
+        range.moveToElementText(contentEditableElement);//Select the entire contents of the element with the range
+        range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+        range.select();//Select the range (make it the visible selection
+    }
+}
+
+showSelectionPosition = function () {
+    elem = document.getElementById('describeInput');//This is the element that you want to move the caret to the end of
+    setEndOfContenteditable(elem);
+}
+
+showSelectionPositionDis = function () {
+  elem = document.getElementById('dialogueInput');//This is the element that you want to move the caret to the end of
+  setEndOfContenteditable(elem);
+}
