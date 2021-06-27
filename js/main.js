@@ -62,8 +62,13 @@ $('#sendQuestion').click(function(){
 });
 $('#blueDotContainer').click(function(){
   var position = $('#blueDotContainer').position();
-  console.log(position.left, position.top);
-  $('#blueDotQuestion').css('opacity', 1).css('left', position.left + 260).css('top', position.top + 20);
+  var eLeft = $('#blueDotContainer').offset().left; //get the offset top of the element
+  // log(eTop - $(window).scrollTop()); //position of the ele w.r.t window
+
+  // $(window).scroll(function() { //when window is scrolled
+  eLeft = eLeft - $(window).scrollLeft();
+  // console.log(position.left, position.top);
+  $('#blueDotQuestion').css('opacity', 1).css('left', eLeft - 200).css('top', position.top + 20);
   $(this).addClass('actived');
   $('#dotEditor').focus();
 });
@@ -74,6 +79,13 @@ $('#blueDotContainer').click(function(){
   })
   $('.menu').mouseleave(function(){
     $('.menu-container').removeClass('active');
+  })
+
+  $('.handle-right').mouseenter(function(){
+    $('.menu-container-right').addClass('active');
+  })
+  $('.menu-right').mouseleave(function(){
+    $('.menu-container-right').removeClass('active');
   })
 
 $('#libraryMenu').click(function(){

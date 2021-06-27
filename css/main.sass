@@ -14,6 +14,7 @@ $text-gray: #898989
 $light-gray: #E0E0E0
 $lighter-gray: #F2F2F2
 $light-line: rgba(255,255,255,.3)
+$dark-green: #699F3E
 
 ::selection 
   background: $orange
@@ -33,6 +34,9 @@ $light-line: rgba(255,255,255,.3)
   clear: both
 .space
   margin-bottom: 1em
+  &.space--border
+    padding-bottom: 1em
+    border-bottom: 1px solid $light-line
 .no-m
   margin: 0 !important
 em
@@ -121,6 +125,12 @@ p
   font-size: 16px
   line-height: 26px
   margin-bottom: 1em
+  &.small
+    font-size: 14px
+    line-height: 18px
+  &.xsmall
+    font-size: 12px
+    line-height: 15px
 .ql-editor
   h1
     margin-bottom: 1em
@@ -265,17 +275,21 @@ p
     backdrop-filter: blur(5px)
     left: calc(285px + 5em)
   &.overlay--green
-    background-color: $green
+    background-color: $dark-green
     color: black
     
     box-shadow: 0 3px 27px 2px rgba(0,0,0,0.10)
     -webkit-backdrop-filter: blur(5px)
     backdrop-filter: blur(5px)
     // left: calc(285px + 5em)
+    // transform: translate3d(3em, 0, 0) !important
+    color: white
   &.overlay--medium
-    width: 315px
+    width: 335px
   h6
-    opacity: .4
+    opacity: .6
+    &.full
+      opacity: 1
   header
     height: 95px
     width: 100%
@@ -470,6 +484,68 @@ input[type=search]
     left: unset
     top: 50%
     transform: translateY(-50%) 
+  
+  // top: 2em
+  // background-color: $blue
+  // background-image: linear-gradient(133deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,.9) 100%)
+  // box-shadow: 0 3px 27px 2px rgba(0,0,0,0.10)
+  // -webkit-backdrop-filter: blur(5px)
+  // backdrop-filter: blur(5px)
+
+.menu-container-right, .menu-right
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 0
+  background-color: yellow
+  
+  // background-color: yellow
+  &.active
+    z-index: 9
+    .menu-right
+      transform: translate3d(0em,0,0)
+   
+      
+    .handle-right
+      transform: translate3d(30px,0,0)
+
+.handle-right
+    position: absolute
+    // top: 50%
+    height: 100%
+    width: 40px
+    border-radius: 9px
+    // background: blue
+    // border: 1px solid $light-gray
+    right: -3px
+    // transform: translateY(-50%)
+    padding: 14px 15px 15px 22px
+    transform: translate3d(200px,0,0)
+    margin-right: 200px
+    transition: .2s transform
+
+    svg
+      display: block
+      position: relative
+      top: 50%
+      transform: translateY(-50%) rotate(180deg)
+.menu-right
+  position: fixed
+  top: 0
+  bottom: 0
+  width: 200px
+  // height: 146px
+  // padding: 2em
+  // background-color: purple
+  height: 100%
+  // position: relative
+  transform: translate3d(100%,0,0)
+  background-color: pink
+  transition: .2s transform
+  right: 0
+  left: unset
+
   
   // top: 2em
   // background-color: $blue
@@ -680,3 +756,10 @@ $startT: 200px
   // 100%
   //   left: $startL + 2
   //   top: $startT - -7
+.huge
+  font-family: 'America Light'
+  font-size: 120px
+.medium
+  font-family: 'America Light'
+  font-size: 40px
+  padding: 10px 0
