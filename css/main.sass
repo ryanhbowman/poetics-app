@@ -310,9 +310,9 @@ p
   &.overlay--medium
     width: 335px
   &.overlay--large
-    width: 640px
+    width: 680px
     .first
-      width: 640px
+      width: 680px
       &.reading article
         overflow-y: auto
         height: calc(100% - 6em)
@@ -393,7 +393,7 @@ input[type=search]
       content: '•'
       font-size: 70px
       position: absolute
-      margin-left: -25px
+      margin-left: -28px
       margin-top: -19px
       color: white
 
@@ -401,6 +401,7 @@ input[type=search]
     li
       min-height: 80px
       border-color: $light-gray
+      padding-right: .6em
       h2
         font-size: 14px
         line-height: 14px
@@ -490,7 +491,7 @@ input[type=search]
       transform: translate3d(20px, -50%, 0)
       
     .handle
-      transform: translate3d(-30px,0,0)
+      transform: translate3d(-230px,0,0)
 
 .handle
     position: absolute
@@ -616,12 +617,12 @@ input[type=search]
     background-color: $blue
     color: white
     &:hover
-      background-color: rgba(0,0,0,1)
+      background-color: lighten($blue, 10%)
   &.green
     background-color: $dark-green
     color: white
     &:hover
-      background-color: rgba(0,0,0,1)
+      background-color: lighten($dark-green, 10%)
   &.orange
     background-color: $orange
   &.small
@@ -872,3 +873,60 @@ img
     color: $green
   .bullet-item--wrapper
     background-color: $green
+
+.criticNav
+  position: fixed
+  top: 1em
+  right: 3em
+  // bottom: 3em
+  width: 85px
+  transform: translate3d(200px,0,0)
+  transition: transform .2s
+  .criticNav--item:nth-of-type(1)
+    .bar
+      height: 45px
+      background-color: $red
+      width: 10px
+      position: absolute
+      margin-left: -21px
+      margin-top: 60px
+  .criticNav--item:nth-of-type(3)
+    .bar
+      height: 25px
+      background-color: $blue
+      width: 10px
+      position: absolute
+      margin-left: -21px
+      margin-top: 30px
+  .criticNav--item:nth-of-type(5)
+    .bar
+      height: 85px
+      background-color: $green
+      width: 10px
+      position: absolute
+      margin-left: -21px
+      margin-top: 80px
+
+.criticNav--item
+  &:nth-of-type(1)::before
+    height: 45px
+    background-color: $green
+    width: 10px
+    position: absolute
+    margin-left: -30px
+  img
+    display: block
+    border-radius: 0
+  h6
+    font-size: 10px
+    text-transform: uppercase
+    padding-bottom: 1px
+
+.three-dots
+  background-color: $lighter-gray
+  border-radius: 5px
+  width: 100%
+  height: 20px
+  text-align: center
+  padding-top: 8px
+  margin: 8px 0

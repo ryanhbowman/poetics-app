@@ -22,6 +22,10 @@ function closeAll() {
   $('#locationOverlay').siblings().each(function(){
     $(this).removeClass('active');
   })
+  $('#eventsOverlay').removeClass('active');
+  $('#eventsOverlay').siblings().each(function(){
+    $(this).removeClass('active');
+  })
 }
 
 function closeMenuAll() {
@@ -38,9 +42,14 @@ function closeMenuAll() {
   $('#locationOverlay').siblings().each(function(){
     $(this).removeClass('active');
   })
+  $('#eventsOverlay').removeClass('active');
+  $('#eventsOverlay').siblings().each(function(){
+    $(this).removeClass('active');
+  })
   $('#critic').css('transform', 'translate3d(-45em,0,0)');
   $('#theeditor').css('transform', 'translate3d(-45em,0,0)');
   $('#criticOverlay').css('transform', 'translate3d(-1000px,0,0)');
+  $('#criticNav').css('transform', 'translate3d(200px,0,0)');
   $('#library').css('transform', 'translate3d(-45em,0,0)');
   
 
@@ -102,6 +111,7 @@ $('#libraryMenu').click(function(){
   $('#critic').css('transform', 'translate3d(-45em,0,0)');
   $('#theeditor').css('transform', 'translate3d(-45em,0,0)');
   $('#criticOverlay').css('transform', 'translate3d(-1000px,0,0)');
+  $('#criticNav').css('transform', 'translate3d(200px,0,0)');
   closeAll();
 });
 
@@ -109,6 +119,7 @@ $('#criticMenu').click(function(){
   $('.menu-container').removeClass('active');
   $('#critic').css('transform', 'translate3d(3em,0,0)');
   $('#theeditor').css('transform', 'translate3d(-45em,0,0)');
+  $('#criticNav').css('transform', 'translate3d(0,0,0)');
   $('#criticOverlay').css('transform', 'translate3d(calc(1335px + 6em),0,0)');
   $('#library').css('transform', 'translate3d(-45em,0,0)');
   closeAll();
@@ -120,6 +131,8 @@ $('#theeditorMenu').click(function(){
   $('#theeditor').css('transform', 'translate3d(3em,0,0)');
   $('#critic').css('transform', 'translate3d(-45em,0,0)');
   $('#library').css('transform', 'translate3d(-45em,0,0)');
+  $('#criticOverlay').css('transform', 'translate3d(-1000px,0,0)');
+  $('#criticNav').css('transform', 'translate3d(200px,0,0)');
   closeAll();
 });
 
@@ -196,6 +209,27 @@ $('#locations').click(function(){
     })
   }
 });
+
+$('#events').click(function(){
+  if ($('#eventsOverlay').hasClass('active')) {  
+    $('#eventsOverlay').removeClass('active');
+    $(this).removeClass('active');
+    $('#eventsOverlay').siblings().each(function(){
+      $(this).removeClass('active');
+    })
+  }
+  else {
+    $('#eventsOverlay').addClass('active');
+    $('#eventsOverlay').siblings().each(function(){
+      $(this).removeClass('active');
+    });
+    $(this).addClass('active');
+    $(this).siblings().each(function(){
+      $(this).removeClass('active');
+    })
+  }
+});
+
 
 // testText.innerHTML = testText.innerHTML.replace(/\B\/\w+/gm, "<span class='red'>$&</span>");
 
@@ -315,7 +349,7 @@ $('#describeInput').on('keypress', function(e) {
       {     
         $('.ql-editor p:last').append(fakeGeneration).delay(5000);      
         new TypeIt("#fading", {
-          speed: 40
+          speed: 20
         }).go();  
         
           
@@ -372,7 +406,7 @@ $('#dialogueInput').on('keypress', function(e) {
           $('.ql-editor p:last').append(fakeGenerationDia).delay(5000);
              
           new TypeIt("#fading2", {
-           speed: 40,
+           speed: 20,
            html: true,
            strings: ["<p>&ldquo;I was on the tunnel squad in the war. We used special weapons just like this down there. The moisture was the big problem, it would rust a gun in a single outing.&rdquo;</p>", "<p>&ldquo;Makes sense.&rdquo; Julie replied.</p>"]
           }).go();  
