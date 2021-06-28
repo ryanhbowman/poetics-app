@@ -304,8 +304,8 @@ editor.addEventListener('keyup', function(){
   }
 });
 
-var fakeGeneration = " <span class='fading' id='fading'>This is some AI shit that the AI writes in an AI way. It is very AI.</span>";
-var fakeGenerationChrist = "This is some AI shit that the AI writes in an AI way. It is very AI.";
+var fakeGeneration = " <span class='fading' id='fading'>The stalk was as thick as a redwood tree and as tall as a twelve-story building. At the top of the stalk was a big round ball of white flesh, as white as a toadstool, as round as a big pumpkin, swelling visibly as the creature fed. The skin of the ball was smooth and translucent, pulsing with slow and powerful throbs. Within this great ball were veins and arteries, and within them were things that writhed and shifted and tore at one another; the ball was full of monstrous life.</span>";
+var fakeGenerationChrist = "The stalk was as thick as a redwood tree and as tall as a twelve-story building. At the top of the stalk was a big round ball of white flesh, as white as a toadstool, as round as a big pumpkin, swelling visibly as the creature fed. The skin of the ball was smooth and translucent, pulsing with slow and powerful throbs. Within this great ball were veins and arteries, and within them were things that writhed and shifted and tore at one another; the ball was full of monstrous life.";
 var fakeGenerationDia = "<span  class='fading' id='fading2'></span>";
 var fakeGenerationDiaChrist = "&ldquo;This is the best thing that I have ever heard.&rdquo;";
 var noMore = false;
@@ -315,29 +315,35 @@ var noMore4 = false;
 var noMore5 = false;
 
 $('#describeInput').on('keypress', function(e) {
-  tagActive = tagActivate('describeInput', 'Bosch');
+  tagActive = tagActivate('describeInput', 'Vic');
   if (tagActive && !noMore){
-    describeInput.innerHTML = describeInput.innerHTML.replace("Bosch", "<span class='tag'>Bosch</span>&nbsp;");
+    describeInput.innerHTML = describeInput.innerHTML.replace("Bosch", "<span class='tag'>Vic</span>&nbsp;");
     showSelectionPosition();
     noMore = true;
   }
-  tagActive2 = tagActivate('describeInput', 'guns');
+  tagActive2 = tagActivate('describeInput', 'Olida');
   if (tagActive2 && !noMore2){
-    describeInput.innerHTML = describeInput.innerHTML.replace("guns", "<span class='tag'>guns</span>&nbsp;");
+    describeInput.innerHTML = describeInput.innerHTML.replace("guns", "<span class='tag'>Olida</span>&nbsp;");
     showSelectionPosition();
     noMore2 = true;
   }
-  tagActive3 = tagActivate('describeInput', 'Vietnam');
+  tagActive3 = tagActivate('describeInput', 'funghi');
   if (tagActive3 && !noMore3){
-    describeInput.innerHTML = describeInput.innerHTML.replace("Vietnam", "<span class='tag'>Vietnam tunnels</span>&nbsp;");
+    describeInput.innerHTML = describeInput.innerHTML.replace("Vietnam", "<span class='tag'>funghi</span>&nbsp;");
     showSelectionPosition();
     noMore3 = true;
   }
   tagActive4 = tagActivate('describeInput', '2');
   if (tagActive4 && !noMore4){
-    describeInput.innerHTML = describeInput.innerHTML.replace("2", "<span class='tag'>2</span>&nbsp;");
+    describeInput.innerHTML = describeInput.innerHTML.replace("6", "<span class='tag'>6</span>&nbsp;");
     showSelectionPosition();
     noMore4 = true;
+  }
+  tagActive5 = tagActivate('describeInput', 'corn');
+  if (tagActive5 && !noMore5){
+    describeInput.innerHTML = describeInput.innerHTML.replace("6", "<span class='tag'>corn</span>&nbsp;");
+    showSelectionPosition();
+    noMore5 = true;
   }
   
   if(e.which == 13) { 
@@ -347,9 +353,9 @@ $('#describeInput').on('keypress', function(e) {
     setTimeout(
       function() 
       {     
-        $('.ql-editor p:last').append(fakeGeneration).delay(5000);      
+        $('.ql-editor p:last').append(fakeGeneration).delay(7000);      
         new TypeIt("#fading", {
-          speed: 20
+          speed: 3
         }).go();  
         
           
@@ -358,40 +364,40 @@ $('#describeInput').on('keypress', function(e) {
             {   
                 $('#fading').replaceWith(fakeGenerationChrist);
                 $('.ql-editor').focus();
-            }, 5000);
+            }, 7000);
           
       }, 2000);
   }        
 });
 
 $('#dialogueInput').on('keypress', function(e) {
-  tagActive = tagActivate('dialogueInput', 'Bosch');
+  tagActive = tagActivate('dialogueInput', 'Vic');
   if (tagActive && !noMore){
-    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Bosch", "<span class='tag'>Bosch</span>&nbsp;");
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Vic", "<span class='tag'>Vic</span>&nbsp;");
     showSelectionPositionDis();
     noMore = true;
   }
-  tagActive2 = tagActivate('dialogueInput', 'guns');
+  tagActive2 = tagActivate('dialogueInput', 'Olida');
   if (tagActive2 && !noMore2){
-    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("guns", "<span class='tag'>guns</span>&nbsp;");
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("guns", "<span class='tag'>Olida</span>&nbsp;");
     showSelectionPositionDis();
     noMore2 = true;
   }
-  tagActive3 = tagActivate('dialogueInput', 'Vietnam');
+  tagActive3 = tagActivate('dialogueInput', 'funghi');
   if (tagActive3 && !noMore3){
-    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Vietnam", "<span class='tag'>Vietnam tunnels</span>&nbsp;");
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Vietnam", "<span class='tag'>funghi</span>&nbsp;");
     showSelectionPositionDis();
     noMore3 = true;
   }
-  tagActive4 = tagActivate('dialogueInput', '2');
+  tagActive4 = tagActivate('dialogueInput', '4');
   if (tagActive4 && !noMore4){
-    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("2", "<span class='tag'>2</span>&nbsp;");
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("2", "<span class='tag'>4</span>&nbsp;");
     showSelectionPositionDis();
     noMore4 = true;
   }
-  tagActive5 = tagActivate('dialogueInput', 'Jenny');
+  tagActive5 = tagActivate('dialogueInput', 'corn');
   if (tagActive5 && !noMore5){
-    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Jenny", "<span class='tag'>Jenny</span>&nbsp;");
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Jenny", "<span class='tag'>corn</span>&nbsp;");
     showSelectionPositionDis();
     noMore5 = true;
   }
@@ -406,9 +412,9 @@ $('#dialogueInput').on('keypress', function(e) {
           $('.ql-editor p:last').append(fakeGenerationDia).delay(5000);
              
           new TypeIt("#fading2", {
-           speed: 20,
+           speed: 2,
            html: true,
-           strings: ["<p>&ldquo;I was on the tunnel squad in the war. We used special weapons just like this down there. The moisture was the big problem, it would rust a gun in a single outing.&rdquo;</p>", "<p>&ldquo;Makes sense.&rdquo; Julie replied.</p>"]
+           strings: ["<p>&ldquo;It lives inside fungi, in a dormant state, spreading throughout underground. It’s been around for millions of years, carried by the wind, or soil, or water. Never in our lifetime have we had a big enough genetic change in the crops that the virus would see it as a target. But the corn you grew, and your research team, and the tobacco plants, and the bio farms, you were developing the plants that would be susceptible. And it woke up. It woke up in your field, and it’s been spreading since.&rdquo; says Olida.</p> <p>&ldquo;How do I stop it?&rdquo; says Vic.</p> <p>&ldquo;You don’t. The best I can imagine, is getting everyone off your land. You need to abandon your farm. You need to burn it all to the ground.&rdquo;</p> <p>&ldquo;That’s not an option. I have a family and a lot of history there.&rdquo;</p> <p>&ldquo;I wish I had better news.&rdquo;</p>"]
           }).go();  
 
           setTimeout(
