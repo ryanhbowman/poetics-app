@@ -8,7 +8,8 @@ $red: #ED7676
 $orange: #F8AF31
 $green: #A1C57B
 $dark-green: #8AC35C
-$blue: #345995
+$blue: #4281D7 //345995
+$light-blue: #61a3fd
 $gray: #829298
 $text-gray: #898989
 $light-gray: #E0E0E0
@@ -37,6 +38,8 @@ $dark-green: #699F3E
   &.space--border
     padding-bottom: 1em
     border-bottom: 1px solid $light-line
+.space-medium
+  margin-bottom: 1.5em
 .no-m
   margin: 0 !important
 em
@@ -123,7 +126,7 @@ h3
 
 p
   font-size: 16px
-  line-height: 26px
+  line-height: 24px
   margin-bottom: 1em
   &.small
     font-size: 14px
@@ -131,6 +134,16 @@ p
   &.xsmall
     font-size: 12px
     line-height: 15px
+.reading
+  p
+    font-size: 16px
+    line-height: 24px
+  h2
+    font-size: 16px
+    text-transform: uppercase
+    line-height: 24px
+    margin-bottom: 5px
+
 .ql-editor
   h1
     margin-bottom: 1em
@@ -241,9 +254,9 @@ p
   color: black
   text-shadow: none
   &.tag--medium
-    border-radius: 10px
+    border-radius: 4px
     padding: 3px 7px 4px
-    font-size: 11px
+    font-size: 12px
   &.tag--orange
     background: $orange
     color: white
@@ -286,6 +299,13 @@ p
     color: white
   &.overlay--medium
     width: 335px
+  &.overlay--large
+    width: 640px
+    .first
+      width: 640px
+      &.reading article
+        overflow-y: auto
+        height: calc(100% - 6em)
   h6
     opacity: .6
     &.full
@@ -298,7 +318,7 @@ p
     height: 100%
     justify-content: space-between
   .first
-    width: 291px
+    width: 314px
     // transition: border .2s
     
   &.open .first
@@ -307,7 +327,7 @@ p
   &.open .second
     display: block
   .second
-    width: 450px
+    width: 475px
     display: none
     // background-color: yellow
   // transition: width .2s
@@ -387,7 +407,7 @@ input[type=search]
       transform: translateY(-50%)
       transition: .3s all
 #researchOverlay.open, #characterOverlay.open
-  width: 817px
+  width: 867px
 
 
 .inputModal 
@@ -414,17 +434,17 @@ input[type=search]
       line-height: 21px
 
 
-.ql-editor::-webkit-scrollbar-track 
+::-webkit-scrollbar-track 
   border: none
   // padding: 2px 0
   background-color: none
 
 
-.ql-editor::-webkit-scrollbar 
+::-webkit-scrollbar 
   width: 10px
 
 
-.ql-editor::-webkit-scrollbar-thumb 
+::-webkit-scrollbar-thumb 
   // height: 30px
   width: 5px
   padding: 0
@@ -763,3 +783,65 @@ $startT: 200px
   font-family: 'America Light'
   font-size: 40px
   padding: 10px 0
+.circle
+  background-color: $blue
+  color: white
+  border-radius: 50%
+  text-align: center
+  padding: 0
+  width: 18px
+  display: inline-block
+  font-size: 13px
+  height: 18px
+  line-height: 18px
+  opacity: 1 !important
+  &.circle--small
+    height: 10px
+    width: 10px
+    top: 1px
+    position: relative
+    left: 2px
+  &.circle--lined
+    background: none
+    border: 1px $gray solid
+    font-weight: 700
+    color: $orange
+    height: 18px
+    width: 18px
+    margin-right: 5px
+    line-height: 15px
+img
+  border-radius: 10px
+.dim
+  opacity: .5
+  .circle
+    opacity: 1
+.characterHover:hover
+  border-bottom: 3px $orange solid
+.bullet-list
+  margin-bottom: 2em
+  position: relative
+.bullet-item
+  padding: 10px 20px 10px 50px
+  line-height: 22px
+  &::before
+    content: '•'
+    font-size: 70px
+    position: absolute
+    margin-left: -31px
+    margin-top: 9px
+    color: $red
+  .bullet-item--wrapper
+    padding: 10px 13px
+    background-color: $red
+    border-radius: 8px
+.bullet-item:nth-of-type(2)
+  &::before
+    color: $light-blue
+  .bullet-item--wrapper
+    background-color: $light-blue
+.bullet-item:nth-of-type(3)
+  &::before
+    color: $green
+  .bullet-item--wrapper
+    background-color: $green

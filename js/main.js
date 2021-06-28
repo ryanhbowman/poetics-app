@@ -40,6 +40,12 @@ function closeMenuAll() {
   })
   $('#critic').css('transform', 'translate3d(-45em,0,0)');
   $('#library').css('transform', 'translate3d(-45em,0,0)');
+  
+
+  if(event.target.id != 'blueDot'){
+    $('#blueDotQuestion').css('opacity', 0).css('left', -2000).css('top', -2000);
+    $('#blueDotContainer').removeClass('actived');
+  }
   // $('#blueDotQuestion').css('opacity', 0).css('left', -2000).css('top', -2000);
   // $('#blueDotContainer').removeClass('actived');
 }
@@ -92,12 +98,14 @@ $('#libraryMenu').click(function(){
   $('.menu-container').removeClass('active');
   $('#library').css('transform', 'translate3d(3em,0,0)');
   $('#critic').css('transform', 'translate3d(-45em,0,0)');
+  $('#criticOverlay').css('transform', 'translate3d(-1000px,0,0)');
   closeAll();
 });
 
 $('#criticMenu').click(function(){
   $('.menu-container').removeClass('active');
   $('#critic').css('transform', 'translate3d(3em,0,0)');
+  $('#criticOverlay').css('transform', 'translate3d(calc(1335px + 6em),0,0)');
   $('#library').css('transform', 'translate3d(-45em,0,0)');
   closeAll();
 });

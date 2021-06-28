@@ -99,6 +99,20 @@
             </div>
             <div class="active-rect"></div>
           </li>
+          <li id="events">
+            <h2>Events</h2>
+            <h6>14 items</h6>
+            <div class="caret">
+              <svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-opacity="0.498244066">
+                      <g id="Accordion-with-subhead" transform="translate(-212.000000, -14.000000)" stroke="#FFFFFF">
+                          <polyline id="Path-6" transform="translate(215.084079, 19.370930) rotate(-90.000000) translate(-215.084079, -19.370930) " points="210.084079 17 215.084079 21.7418604 220.084079 17"></polyline>
+                      </g>
+                  </g>
+              </svg>
+            </div>
+            <div class="active-rect"></div>
+          </li>
         </div>
         <h2 style="margin-bottom: 10px">Tags</h2>
         <div class="tag tag--red tag--medium">guns</div> <div class="tag tag--red tag--medium">police weapons</div>
@@ -168,7 +182,7 @@
             <div class="lined-list lined-list--detailed">
               <li id="characterOpen">
                 <div class="fl">
-                  <h2>Hierynomous Bosch</h2>
+                  <h2>Hierynomous Bosch <div class="circle circle--small"></div></h2>
                   <h6>Main character</h6>
                 </div>
                 <div class="fr"><img src="images/bosch.png" width="60px" alt=""></div>
@@ -184,12 +198,26 @@
           </article>
         </section>
         <section class="second" style="position: relative;">
-          <header>
-            <h6 class="orange" style="opacity: 1;"><strong>CHARACTER</strong></h6>
-            <h1>Hierynomous Bosch</h1>
+          <header class="cf">
+            <div class="fl" style="width: 70%">
+              <h6 class="orange" style="opacity: 1;"><strong>CHARACTER</strong></h6>
+              <h1>Hierynomous Bosch</h1>
+            </div>
+            <div class="fr" style="width: 30%">
+              <div class="button orange limited fr" style="margin-top: 10px;" id="interviewActivate">Interview</div>
+            </div>
           </header>
           <article style="padding-top: 1em">
-            <div class="button orange limited" id="interviewActivate">Interview</div>
+            <div class="cf space-medium">
+              <div class="fl " style="width: 50%; font-size: 14px;">
+                <span class="circle">2</span> <span class="dim">suggestions waiting</span>
+              </div>
+              <div class="fr" style="width: 50%">
+                <div class="fr">
+                  <div class="circle circle--lined">+</div><div class="tag tag--orange tag--medium">police</div> <div class="tag tag--orange tag--medium">Vietnam tunnels</div>
+                </div>
+              </div>
+            </div>
 
             <div contenteditable="true">
               <p>Bosch's mother was a prostitute in Hollywood who was murdered on October 28, 1961, when Bosch was 11 years old. His father, whom he met later in life, was Mickey Haller Sr., a prominent defense attorney known for representing mobster Mickey Cohen, among other clients.</p>
@@ -306,6 +334,33 @@
        
       </article>
     </div>
+    <div class="overlay overlay--light overlay--large overlay--toggle" id="criticOverlay">
+      <div class="doubler">
+        <section class="first reading">
+          <header>
+            <h6>Not mean</h6>
+            <h1>The Report</h1>
+          </header>
+          <article style="padding-top: 1.5em">
+            <h2>Overview</h2>
+            <p>An Unfortunate Event is a gripping and very readable thriller with a compelling structure and a strong narratorial voice. However, the ending is currently not strong enough for this to be a commercial prospect. By sharpening the focus of the latter-day sections and bringing the tension between Alice and Georgie to a stronger conclusion – and possibly rethinking Georgie’s childhood experiences – this work will stand a much stronger chance of attracting an agent.</p>
+            <div class="bullet-list">
+              <div class="bullet-item">
+                <div class="bullet-item--wrapper">There will also be judicious but ample use of bulleted lists both for ease of creation and ease of digestion.</div>
+              </div>
+              <div class="bullet-item"><div class="bullet-item--wrapper">There will also be judicious but ample use of bulleted lists both for ease of creation and ease of digestion.</div></div>
+              <div class="bullet-item"><div class="bullet-item--wrapper">There will also be judicious but ample use of bulleted lists both for ease of creation and ease of digestion.</div></div>
+            </div>
+            <h2>Report</h2>
+            <p>I enjoyed reading this immensely. You’re a confident and engaging writer, with a good ear for many of the important elements of fiction writing: suspense, pacing, narratorial voice. If I hadn’t read your covering letter I probably could have guessed that you’ve written a number of novels already, and it doesn’t surprise me at all that you’ve found some success through self-publishing. As you know very well, you could self-publish your novel as it is right now and find a readership, but I appreciate that you’re ready to go bigger. I do think your book has commercial potential but it’s currently held back in some ways, so my comments and suggestions are made entirely with the aim of turning this into something that will wow an agent and which has the potential to be a commercial hit.</p>
+            <p>The main thing that’s holding the story back at the moment is the ending. It’s not a bad twist by any means, but finding out that Alice tampered with her husband’s brakes is reminiscent of a ‘tale with a twist’ short story – it’s a wry smile of an ending instead of a crashing finale, and it’s unsatisfying that things never really come to a head between Alice and Georgie as we’ve been expecting them to: the novel’s crescendo comes several chapters back, with Hilary’s attempted rape, and Alice finding an upsetting email about herself from Georgie is too quiet a culmination of their story. The tension between the two women is what propels the later segments – there are some pitch-perfect moments when Georgie’s benign or banal actions are read by both Alice and the reader as full of</p>
+           
+        
+          </article>
+        </section>
+       
+      </div>
+    </div>
 
 
 
@@ -369,7 +424,7 @@
         <div class="blueDotContainer" id="blueDotContainer"><div class="blueDot" id="blueDot"></div></div>
         <div id="editor">
           <h1>Chapter 1</h1>
-          <p>Bosch arrived late and had to park on a cemetery lane far from the grave site. Careful not to step on anybody’s grave, he limped through two memorial sections, his cane sinking into the soft ground, until he saw the gathering for John Jack Thompson. It was standing room only around the old detective’s grave site and Bosch knew that wouldn’t work with his knee six weeks post-op. He retreated to the nearby Garden of Legends section and sat on a concrete bench that was part of Tyrone Power’s tomb. He assumed it was okay since it was clearly a bench. He remembered his mother taking him to see Power in the movies when he was a kid. Old stuff they would run in the revival theaters on Beverly. He remembered the handsome actor as Zorro and as the accused American in Witness for the Prosecution.</p>
+          <p><span class="characterHover">Bosch</span> arrived late and had to park on a cemetery lane far from the grave site. Careful not to step on anybody’s grave, he limped through two memorial sections, his cane sinking into the soft ground, until he saw the gathering for John Jack Thompson. It was standing room only around the old detective’s grave site and Bosch knew that wouldn’t work with his knee six weeks post-op. He retreated to the nearby Garden of Legends section and sat on a concrete bench that was part of Tyrone Power’s tomb. He assumed it was okay since it was clearly a bench. He remembered his mother taking him to see Power in the movies when he was a kid. Old stuff they would run in the revival theaters on Beverly. He remembered the handsome actor as Zorro and as the accused American in Witness for the Prosecution.</p>
         
         </div>
       </div>
