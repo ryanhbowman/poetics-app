@@ -39,6 +39,8 @@ function closeMenuAll() {
     $(this).removeClass('active');
   })
   $('#critic').css('transform', 'translate3d(-45em,0,0)');
+  $('#theeditor').css('transform', 'translate3d(-45em,0,0)');
+  $('#criticOverlay').css('transform', 'translate3d(-1000px,0,0)');
   $('#library').css('transform', 'translate3d(-45em,0,0)');
   
 
@@ -98,6 +100,7 @@ $('#libraryMenu').click(function(){
   $('.menu-container').removeClass('active');
   $('#library').css('transform', 'translate3d(3em,0,0)');
   $('#critic').css('transform', 'translate3d(-45em,0,0)');
+  $('#theeditor').css('transform', 'translate3d(-45em,0,0)');
   $('#criticOverlay').css('transform', 'translate3d(-1000px,0,0)');
   closeAll();
 });
@@ -105,7 +108,17 @@ $('#libraryMenu').click(function(){
 $('#criticMenu').click(function(){
   $('.menu-container').removeClass('active');
   $('#critic').css('transform', 'translate3d(3em,0,0)');
+  $('#theeditor').css('transform', 'translate3d(-45em,0,0)');
   $('#criticOverlay').css('transform', 'translate3d(calc(1335px + 6em),0,0)');
+  $('#library').css('transform', 'translate3d(-45em,0,0)');
+  closeAll();
+});
+
+
+$('#theeditorMenu').click(function(){
+  $('.menu-container').removeClass('active');
+  $('#theeditor').css('transform', 'translate3d(3em,0,0)');
+  $('#critic').css('transform', 'translate3d(-45em,0,0)');
   $('#library').css('transform', 'translate3d(-45em,0,0)');
   closeAll();
 });
