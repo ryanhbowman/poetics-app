@@ -317,19 +317,19 @@ var noMore5 = false;
 $('#describeInput').on('keypress', function(e) {
   tagActive = tagActivate('describeInput', 'Vic');
   if (tagActive && !noMore){
-    describeInput.innerHTML = describeInput.innerHTML.replace("Bosch", "<span class='tag'>Vic</span>&nbsp;");
+    describeInput.innerHTML = describeInput.innerHTML.replace("Vic", "<span class='tag'>Vic</span>&nbsp;");
     showSelectionPosition();
     noMore = true;
   }
   tagActive2 = tagActivate('describeInput', 'Olida');
   if (tagActive2 && !noMore2){
-    describeInput.innerHTML = describeInput.innerHTML.replace("guns", "<span class='tag'>Olida</span>&nbsp;");
+    describeInput.innerHTML = describeInput.innerHTML.replace("Olida", "<span class='tag'>Olida</span>&nbsp;");
     showSelectionPosition();
     noMore2 = true;
   }
   tagActive3 = tagActivate('describeInput', 'funghi');
   if (tagActive3 && !noMore3){
-    describeInput.innerHTML = describeInput.innerHTML.replace("Vietnam", "<span class='tag'>funghi</span>&nbsp;");
+    describeInput.innerHTML = describeInput.innerHTML.replace("funghi", "<span class='tag'>funghi</span>&nbsp;");
     showSelectionPosition();
     noMore3 = true;
   }
@@ -341,7 +341,7 @@ $('#describeInput').on('keypress', function(e) {
   }
   tagActive5 = tagActivate('describeInput', 'corn');
   if (tagActive5 && !noMore5){
-    describeInput.innerHTML = describeInput.innerHTML.replace("6", "<span class='tag'>corn</span>&nbsp;");
+    describeInput.innerHTML = describeInput.innerHTML.replace("corn", "<span class='tag'>corn</span>&nbsp;");
     showSelectionPosition();
     noMore5 = true;
   }
@@ -379,25 +379,25 @@ $('#dialogueInput').on('keypress', function(e) {
   }
   tagActive2 = tagActivate('dialogueInput', 'Olida');
   if (tagActive2 && !noMore2){
-    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("guns", "<span class='tag'>Olida</span>&nbsp;");
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Olida", "<span class='tag'>Olida</span>&nbsp;");
     showSelectionPositionDis();
     noMore2 = true;
   }
   tagActive3 = tagActivate('dialogueInput', 'funghi');
   if (tagActive3 && !noMore3){
-    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Vietnam", "<span class='tag'>funghi</span>&nbsp;");
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("funghi", "<span class='tag'>funghi</span>&nbsp;");
     showSelectionPositionDis();
     noMore3 = true;
   }
   tagActive4 = tagActivate('dialogueInput', '4');
   if (tagActive4 && !noMore4){
-    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("2", "<span class='tag'>4</span>&nbsp;");
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("4", "<span class='tag'>4</span>&nbsp;");
     showSelectionPositionDis();
     noMore4 = true;
   }
   tagActive5 = tagActivate('dialogueInput', 'corn');
   if (tagActive5 && !noMore5){
-    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("Jenny", "<span class='tag'>corn</span>&nbsp;");
+    dialogueInput.innerHTML = dialogueInput.innerHTML.replace("corn", "<span class='tag'>corn</span>&nbsp;");
     showSelectionPositionDis();
     noMore5 = true;
   }
