@@ -71,11 +71,34 @@ $('.main').click(function(){
   closeMenuAll();
   console.log('reset');
 });
-
+var questionCount = 1;
 $('#sendQuestion').click(function(){
-  $('#blueDotQuestion').css('opacity', 1).css('left', -2000).css('top', -2000);
-  $('#blueDotContainer').removeClass('actived');
-  $('#blueDotContainer').css('opacity', 0);
+  questionCount++;
+  if (questionCount < 5){
+    $('.chat-container--' + questionCount).slideDown();
+    questionCount++;
+    setTimeout(
+      function() 
+      {   
+        $('.chat-container--' + questionCount).slideDown();
+      }, 900);
+    
+    $('#dotEditor').val('');
+  }
+  else {
+    $('#blueDotQuestion').css('opacity', 1).css('left', -2000).css('top', -2000);
+    $('#blueDotContainer').removeClass('actived');
+    $('#blueDotContainer').css('opacity', 0);
+  }
+  
+});
+$('#doneQuestion').click(function(){
+  
+    $('#blueDotQuestion').css('opacity', 1).css('left', -2000).css('top', -2000);
+    $('#blueDotContainer').removeClass('actived');
+    $('#blueDotContainer').css('opacity', 0);
+  
+  
 });
 $('#blueDotContainer').click(function(){
   var position = $('#blueDotContainer').position();
